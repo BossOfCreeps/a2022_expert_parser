@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Поиск по экспертам А2022</title>
 </head>
 <body>
 {% if not experts %}
@@ -13,7 +13,7 @@
 {% endif %}
 
 {% for expert in experts %}
-    <a href="{{ expert.link }}">{{ expert.name }} ({{ expert.link }})</a><br>
+    <a href="{{ expert.link }}">{{ expert.name }}</a> ({{ expert.link }})<br>
 {% endfor %}
 </body>
 </html>

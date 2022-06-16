@@ -25,11 +25,13 @@ class Command(BaseCommand):
 
             for expert in experts:
                 data = expert.find_all("div", class_="expert-profile-card__block")
-                Expert.objects.create(
+                link = expert.find("a", class_="button button--primary global-profile__sidebar-btn-w-100")["href"]
+                Expert.objects.get_or_create(
+                    id=link.split("/")[4],
                     name=data[0].text,
                     text=data[1].text[6:],
                     help=data[2].text[24:],
                     expertise=data[3].text[10:],
                     competencies=data[4].text[11:],
-                    link=expert.find("a", class_="button button--primary global-profile__sidebar-btn-w-100")["href"]
+                    link=link
                 )

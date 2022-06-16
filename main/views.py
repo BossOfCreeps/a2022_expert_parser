@@ -18,6 +18,7 @@ class ExpertFormView(FormView):
     def form_valid(self, form):
         text = form.data.get("text", "")
         experts = Expert.objects.order_by("id").filter(
+            Q(name__icontains=text) |
             Q(text__icontains=text) |
             Q(help__icontains=text) |
             Q(expertise__icontains=text) |
