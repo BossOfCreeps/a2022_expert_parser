@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4ezkk#rz2(vfw5gv4l54wxpwt=8xqjzt*vaelr8x$09ol6@37$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["bossofcreeps.site", "localhost"]
 
 
 # Application definition
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'a2022_expert_parser.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'a2022',
+        'USER': 'a2022_user',
+        'PASSWORD': 'password',
+        'HOST': 'bossofcreeps.site',
+        'PORT': '5432',
     }
 }
 
