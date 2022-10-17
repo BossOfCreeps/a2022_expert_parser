@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'a2022_expert_parser.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'a2022',
-        'USER': 'a2022_user',
-        'PASSWORD': 'password',
-        'HOST': 'bossofcreeps.site',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'sqlite.db',
     }
 }
 
